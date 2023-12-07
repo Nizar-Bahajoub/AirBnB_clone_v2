@@ -4,7 +4,7 @@
 sudo apt-get -y update > /dev/null 2>&1
 sudo apt-get -y install nginx > /dev/null 2>&1
 sudo mkdir -p /data/web_static/shared/ /data/web_static/releases/test/
-echo "Hello world" > /data/web_static/releases/test/index.html
+echo "Hello world" | sudo tee /data/web_static/releases/test/index.html > /dev/null 2>&1
 CURRENT="/data/web_static/current"
 if [ -L "$CURRENT" ]; then
     sudo rm "$CURRENT"

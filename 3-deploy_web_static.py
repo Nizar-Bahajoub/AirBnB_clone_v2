@@ -52,6 +52,7 @@ def do_deploy(archive_path):
     except:
         return False
 
+
 def deploy():
     """
     Pack tarball and deploy to servers web-01 and web-02
@@ -59,4 +60,5 @@ def deploy():
     filepath = do_pack()
     if not filepath:
         return False
-    return do_deploy(filepath)
+    f = do_deploy(filepath)
+    return f
